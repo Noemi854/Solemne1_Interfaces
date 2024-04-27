@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Cita Veterinaria</title>
+    <style>
+        /* ... Estilos similares a la primera página ... */
+    </style>
+</head>
+<body>
+<header>
+    <h1>Confirmación de Cita Veterinaria</h1>
+</header>
+
+<section>
+    <h2>Detalles de la Cita</h2>
+    <p id="detalleCita"></p>
+</section>
+
+<script>
+    window.onload = function() {
+        var datosCita = JSON.parse(localStorage.getItem('datosCita'));
+        if (datosCita) {
+            var detalle = 'Cita para ' + datosCita.nombreMascota + ' (' + datosCita.especie + ', ' + datosCita.raza + ', ' + datosCita.edad + ' años) confirmada para el ' + datosCita.fecha + ' a las ' + datosCita.hora + ' con el Dr. ' + datosCita.doctor + '. Servicio: ' + datosCita.servicio + '.';
+            document.getElementById('detalleCita').innerText = detalle;
+        } else {
+            document.getElementById('detalleCita').innerText = 'No se ha encontrado información de la cita.';
+        }
+    }
+</script>
+
+<script>
+    function agendarCita() {
+        var datosCita = {
+            nombreMascota: document.getElementById('nombreMascota').value,
+            especie: document.getElementById('especie').value,
+            raza: document.getElementById('raza').value,
+            edad: document.getElementById('edad').value,
+            servicio: document.getElementById('servicio').value,
+            fecha: document.getElementById('date').value,
+            hora: document.getElementById('time').value,
+            doctor: document.getElementById('doctor').value
+        };
+
+        localStorage.setItem('datosCita', JSON.stringify(datosCita));
+        window.location.href = 'confirmacion.html'; // Redireccionar a la nueva página
+    }
+</script>
+</body>
+</html>

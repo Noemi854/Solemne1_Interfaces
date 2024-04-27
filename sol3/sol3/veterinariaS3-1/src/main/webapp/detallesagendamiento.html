@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ... Resto del código ... -->
+
+    <script>
+        function agendarCita() {
+            var datosCita = {
+                nombreMascota: document.getElementById('nombreMascota').value,
+                especie: document.getElementById('especie').value,
+                raza: document.getElementById('raza').value,
+                edad: document.getElementById('edad').value,
+                servicio: document.getElementById('servicio').value,
+                fecha: document.getElementById('date').value,
+                hora: document.getElementById('time').value,
+                doctor: document.getElementById('doctor').value
+            };
+
+            localStorage.setItem('datosCita', JSON.stringify(datosCita));
+            window.location.href = 'confirmacion.html'; // Redireccionar a la nueva página
+        }
+    </script>
+</head>
+<!-- ... Resto del cuerpo de la página ... -->
+</html>

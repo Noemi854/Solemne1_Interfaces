@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            width: 50%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Agendar Cita</h1>
+</header>
+
+<section>
+    <form id="appointmentForm">
+        <label for="date">Fecha:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Hora:</label>
+        <select id="time" name="time" required>
+            <option value="09:00-10:00">09:00 AM - 10:00 AM</option>
+            <option value="10:00-11:00">10:00 AM - 11:00 AM</option>
+            <option value="11:00-12:00">11:00 AM - 12:00 PM</option>
+            <option value="15:00-16:00">03:00 PM - 04:00 PM</option>
+            <option value="16:00-17:00">04:00 PM - 05:00 PM</option>
+            <option value="17:00-18:00">05:00 PM - 06:00 PM</option>
+        </select>
+
+        <label for="doctor">Médico:</label>
+        <select id="doctor" name="doctor" required>
+            <option value="DrX">Dr. X</option>
+            <option value="DrY">Dr. Y</option>
+            <!-- Puedes agregar más médicos según sea necesario -->
+        </select>
+
+        <button type="button" onclick="agendarCita()">Agendar Cita</button>
+    </form>
+
+    <div id="availabilityMessage"></div>
+</section>
+
+<script>
+    function agendarCita() {
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+        var doctor = document.getElementById('doctor').value;
+
+        // Realizar operaciones adicionales, como verificar disponibilidad en el servidor
+
+        var message = 'Cita agendada para el ' + date + ' a las ' + time + ' con el Dr. ' + doctor;
+        document.getElementById('availabilityMessage').innerText = message;
+    }
+</script>
+
+</body>
+</html>

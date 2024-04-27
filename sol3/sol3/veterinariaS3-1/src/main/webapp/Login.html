@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        #loginForm, #registerForm {
+            width: 40%;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        #loginForm label, #registerForm label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        #loginForm input, #registerForm input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        #loginButton, #registerButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #regButton, #registerButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bienvenidos</h1>
+</header>
+
+<section>
+    <div id="loginForm">
+        <h2>Iniciar Sesión</h2>
+        <form action="/login" method="post">
+            <label for="rutLogin">Rut:</label>
+            <input type="text" id="rutLogin" name="rutLogin" required>
+
+            <label for="passwordLogin">Contraseña:</label>
+            <input type="password" id="passwordLogin" name="passwordLogin" required>
+
+            <button type="submit" id="loginButton">Login</button>
+            <button type="button" id="regButton">Registrarse</button>
+
+        </form>
+    </div>
+
+
+    <div id="error-message"></div>
+</section>
+<script src="com.edc.jdbc.veterinariaS3-1.controller.js"></script>
+<script>
+    document.getElementById('regButton').addEventListener('click', function() {
+        // Redirige a la página "Register.html" cuando se hace clic en el botón
+        window.location.href = 'Register.html';
+    });
+
+</script>
+
+
+</body>
+</html>

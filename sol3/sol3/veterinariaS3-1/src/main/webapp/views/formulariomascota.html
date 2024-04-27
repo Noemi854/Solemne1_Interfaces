@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita Veterinaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            width: 50%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Agendar Cita Veterinaria</h1>
+</header>
+
+<section>
+    <form action="/agendar-cita" method="post">
+        <label for="nombreMascota">Nombre de la Mascota:</label>
+        <input type="text" id="nombreMascota" name="nombreMascota" required>
+
+        <label for="especie">Especie:</label>
+        <select id="especie" name="especie" required>
+            <option value="Perro">Perro</option>
+            <option value="Gato">Gato</option>
+            <option value="Ave">Ave</option>
+            <option value="Conejo">Conejo</option>
+            <option value="Roedor">Roedor</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" name="raza" required>
+
+        <label for="edad">Edad:</label>
+        <input type="text" id="edad" name="edad" required>
+
+        <button type="submit">Agendar Cita</button>
+    </form>
+</section>
+
+</body>
+</html>
